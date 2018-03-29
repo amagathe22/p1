@@ -11,7 +11,7 @@
 			LogIn:<br>
 			<input type="text" name="login"><br>
 			Mot de Passe:<br>
-			<input type="password" name="password">
+			<input type="password" name="password"><br>
 			<input type="submit" name="submit">
 		</form>
 		<p>Vous ne possédez pas encore de compte? inscrivez vous au plus vite!</p>

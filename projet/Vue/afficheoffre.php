@@ -10,6 +10,8 @@
 </head>
 <body>
 	<h1 style="color:blue">Offres d'emplois disponibles</h1>
+	<a href="index.php?page=home"">Déconnexion</a>
+	<b/>
 	<a href="Vue/pagerecrutement.php">Afficher offre</a>
 	<div>
 		<table style ="width:100%">

@@ -9,7 +9,7 @@
 	<div style="text-align: center;">
 		<form action="index.php?page=login" method="post">
 			LogIn:<br>
-			<input type="text" name="login">
+			<input type="text" name="login"><br>
 			Mot de Passe:<br>
 			<input type="password" name="password">
 			<input type="submit" name="submit">

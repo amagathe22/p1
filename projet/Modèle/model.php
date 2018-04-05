@@ -15,7 +15,7 @@ class Model
 		$password = "root";
 
 		try {
-		    $conn = new PDO("mysql:host=$servername;dbname=formation_cfa", $username, $password);
+		    $conn = new PDO("mysql:host=$servername;dbname=ProjetSite", $username, $password);
 		    // set the PDO error mode to exception
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $this->connexion=$conn;
@@ -49,17 +49,17 @@ class Model
 	}
 
 	function getListOffre() {
-		$list = array();		
-		for ($i=0; $i <5 ; $i++){
-			include_once "Modèle/offre.php";
-			$offre = null;
-			foreach  ($this->connexion->query($sql) as $row) {
-				$offre = new Offre($row['début'],$row['description'],$row['entreprise'],$row['entreprise'],$row['parution'],$row['lieutravail']);}
-			$list[i] = $offre;
-			}
+		$list = [];
+		$sql = "SELECT * FROM `offre`";
+		include_once "Modèle/offre.php";
+		
+		foreach  ($this->connexion->query($sql) as $row) {
+			$offre = new Offre($row['début'],$row['description'],$row['entreprise'],$row['entreprise'],$row['parution'],$row['lieutravail']);
+			array_push($list,$offre);
+		}
 		return $list;
 
-	}
+		}
 }
 
 ?>

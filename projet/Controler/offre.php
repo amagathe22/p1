@@ -3,10 +3,10 @@
 include "Modèle/offre.php";
 include "Modèle/model.php";
 
-$model = new $model();
+$model = new Model();
 
 $offre_dispo = $model->getListoffre();
-include_once "Vue/vue_offe.php"
+include "Vue/vue_offre.php";
 
 
 ?>

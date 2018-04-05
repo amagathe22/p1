@@ -9,7 +9,7 @@
 		<h2 style="border-style : solid" ;>Offre de contrat d'alternance</h2>
 	</p1>
 	<a href="javascript:history.go(-1)">Retourner à la selection d'offres</a>
-	<a href="home.php">Déconnexion</a>
+	<a href="index.php?">Déconnexion</a>
 	<br><br><br>Cher Candidat / Chère Candidate,<br><br><br> Sur cette page vous pourrez postuler à l'offre que vous aurez séléctionné précédemment.
 	<br><p>o Attacher votre CV</p>
 	<input type="file" id="CV">

@@ -15,6 +15,9 @@ switch ($page) {
 	case 'login':
 		include "Controler/login.php";
 		break;
+	case "offre":
+		include "Controler/offre.php";
+		break;
 	default:
 		include "Vue/home.php";
 		break;

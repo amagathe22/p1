@@ -10,14 +10,10 @@
 
 
 
-     <?php echo count($offre_dispo);
-     //echo print_r($offre_dispo);
-     echo ($offre_dispo[0])->GetEntreprise() ?>
-
-
-
-
+     <?php echo count($offre_dispo);?>
+     <br>
      
+     <?php echo ($offre_dispo[0])->GetEntreprise() ?>  
 
 
 

@@ -3,10 +3,19 @@
 $login = $_POST['login'];
 $password = $_POST['password'];
 
-if ($login=="abc" && $password=="123"){
-	include "Vue/success.php";
+include "Model/user.php";
+include "Model/model.php";
+
+$model = new Model();
+$user = $model->getUserByEmail($login);
+
+
+if (password_verify($password, $user->getPassword())){
+	session_start();
+	$_SESSION["user"]=serialize($user);
+	header("Location: index.php?page=accueil");
 }else {
-	include "Vue/error.php";
+	header("Location: index.php?page=login");
 }
 
 ?>

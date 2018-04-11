@@ -29,15 +29,15 @@ class Model
 	}
 
 	function createUser($user){
-		$this->connexion->exec("INSERT INTO `user`( `nom`, `mail`) VALUES ('".$user->getName()."','".$user->getMail()."')");
+		$this->connexion->exec("INSERT INTO `user`( `name`, `mail`,`password`) VALUES ('".$user->getName()."','".$user->getMail()."','".$user->getPassword()."')");
 	}
 	function getUserByEmail($mail){
 
 		$sql =  "SELECT * FROM `user` WHERE mail='".$mail."'";
 		$user = null;
-		include_once "Modèle/user.php";
+		include_once "Model/user.php";
 	    foreach  ($this->connexion->query($sql) as $row) {
-	    	$user = new User($row['nom'],$row['mail']);
+	    	$user = new User($row['name'],$row['mail'],$row['password']);
 	  	}
 	  	return $user;
 	}
@@ -51,7 +51,7 @@ class Model
 	function getListOffre() {
 		$list = [];
 		$sql = "SELECT * FROM `offre`";
-		include_once "Modèle/offre.php";
+		include_once "Model/offre.php";
 		
 		foreach  ($this->connexion->query($sql) as $row) {
 			$offre = new Offre($row['début'],$row['description'],$row['entreprise'],$row['entreprise'],$row['parution'],$row['lieutravail']);

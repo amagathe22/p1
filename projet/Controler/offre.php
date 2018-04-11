@@ -1,7 +1,7 @@
 <?php
 
-include "Modèle/offre.php";
-include "Modèle/model.php";
+include "Model/offre.php";
+include "Model/model.php";
 
 $model = new Model();
 

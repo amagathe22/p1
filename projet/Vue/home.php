@@ -19,6 +19,6 @@ $name = $user->getName();
 <form action="index.php?action=logout" method="post">        
         <input type="submit" value="deconexion">
 </form>
-<form action="index.php?action=offre" method="post">        
+<form action="index.php?page=offre" method="post">        
         <input type="submit" value="afficher offre">
 </form>

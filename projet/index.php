@@ -27,7 +27,7 @@ if ($page) {
 			break;
 		case "offre":
 			checkLoggedIn();
-			showPage("Vue/vue_offre.php");
+			showPage("Controler/offre.php");
 			break;
 		case "inscription":
 			showPage("Vue/inscription.html");

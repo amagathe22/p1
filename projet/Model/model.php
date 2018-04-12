@@ -54,6 +54,8 @@ class Model
 		echo $sql;		
 		include_once "Model/offre.php";		
 		foreach  ($this->connexion->query($sql) as $row) {
+			echo $row['début'];
+			echo $row['description'];
 			$offre = new Offre($row['début'],$row['description'],$row['entreprise'],$row['entreprise'],$row['parution'],$row['lieutravail']);
 			array_push($list,$offre);
 		}

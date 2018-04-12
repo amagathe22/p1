@@ -51,8 +51,8 @@ class Model
 	function getListOffre() {
 		$list = [];
 		$sql = "SELECT * FROM `offre`";
-		include_once "Model/offre.php";
-		
+		echo $sql;		
+		include_once "Model/offre.php";		
 		foreach  ($this->connexion->query($sql) as $row) {
 			$offre = new Offre($row['début'],$row['description'],$row['entreprise'],$row['entreprise'],$row['parution'],$row['lieutravail']);
 			array_push($list,$offre);

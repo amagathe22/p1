@@ -8,12 +8,12 @@ include "Model/model.php";
 
 $model = new Model();
 $user = $model->getUserByEmail($login);
+if ($user === null){
+	include "Vue/error.php";
 
-if (password_verify($password, $user->getPassword())){
-	session_start();
-	echo("1");
-	$_SESSION["user"]=serialize($user);
-	echo("2");
+}else if (password_verify($password, $user->getPassword())){
+	session_start();	
+	$_SESSION["user"]=serialize($user);	
 	header("Location: index.php?page=accueil");
 }else {
 	/*header("Location: index.php?page=login");*/

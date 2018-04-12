@@ -26,13 +26,14 @@ if ($page) {
 			showPage("Vue/login.html");
 			break;
 		case "offre":
+			checkLoggedIn();
 			showPage("Vue/vue_offre.php");
 			break;
 		case "inscription":
 			showPage("Vue/inscription.html");
 			break;
 		default:
-			checkLoggedIn();
+			checkLoggedIn();			
 			showPage("Vue/home.php");
 			break;
 	}
@@ -47,8 +48,9 @@ if ($page) {
 		case 'logout':
 			include_once "Controler/logout.php";
 			break;
-		case 'action':
+		case 'offre':
 			include_once "Controler/offre.php";
+			break;
 		default:
 			include "Vue/home.php";
 			break;

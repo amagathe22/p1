@@ -14,11 +14,13 @@ $name = $user->getName();
 
 ?>
 
-<h1>Bienvenue sur l'accueil</h1>
-<h2>votre nom est : <?php echo $name; ?></h2>
-<form action="index.php?action=logout" method="post">        
-        <input type="submit" value="deconexion">
-</form>
-<form action="index.php?page=offre" method="post">        
-        <input type="submit" value="afficher offre">
-</form>
+<div style="padding: 4cm">
+        <h1 style="text-align: center; color:darkblue; font-family:calibri">PROFIL CANDIDAT</h1>
+        <h2 style="color:darkblue; font-family:calibri">NOM: <?php echo $name; ?></h2>
+        <form action="index.php?action=logout" method="post">        
+                <input type="submit" value="deconnexion">
+        </form>
+        <form action="index.php?page=offre" method="post">        
+                <input type="submit" value="afficher offre">
+        </form>
+</div>

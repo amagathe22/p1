@@ -18,9 +18,13 @@ function checkLoggedIn(){
 
 if ($page) {
 	switch ($page) {
-		case 'accueil':
+		case 'accueil_candidat':
 			checkLoggedIn();
-			showPage("Vue/home.php");			
+			showPage("Vue/home_candidat.php");			
+			break;
+		case 'accueil_entreprise':
+			checkLoggedIn();
+			showPage("Vue/home_entreprise.php");			
 			break;
 		case 'login':			
 			showPage("Vue/login.html");

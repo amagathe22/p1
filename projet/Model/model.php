@@ -15,7 +15,7 @@ class Model
 		$password = "root";
 
 		try {
-		    $conn = new PDO("mysql:host=$servername;dbname=ProjetSite1", $username, $password);
+		    $conn = new PDO("mysql:host=$servername;dbname=linkedon", $username, $password);
 		    // set the PDO error mode to exception
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $this->connexion=$conn;
@@ -29,19 +29,49 @@ class Model
 	}
 
 	function createUser($user){
-		$this->connexion->exec("INSERT INTO `user`( `name`, `mail`,`password`) VALUES ('".$user->getName()."','".$user->getMail()."','".$user->getPassword()."')");
+		$this->connexion->exec("INSERT INTO `user`(  `email`,`mdp`,`type`) VALUES ('".$user->getMail()."','".$user->getPassword()."','".$user->getType()."')");
 	}
-	function getUserByEmail($mail){
+	function getUserByEmail($email){
 
-		$sql =  "SELECT * FROM `user` WHERE mail='".$mail."'";
+		$sql =  "SELECT * FROM `user` WHERE email='".$email."'";
 		$user = null;
 		include_once "Model/user.php";
 	    foreach  ($this->connexion->query($sql) as $row) {
-	    	$user = new User($row['name'],$row['mail'],$row['password']);
+	    	$user = new User($row['email'],$row['mdp'],$row['type']);
 	  	}
 	  	return $user;
 	}
 
+	function getEntrepriseByEmail($email){
+
+		$sql =  "SELECT * FROM `entreprise` WHERE email='".$email."'";
+		$entreprise = null;
+		include_once "Model/entreprise.php";
+	    foreach  ($this->connexion->query($sql) as $row) {
+	    	$entreprise = new Entreprise($row['nom'],$row['adresse'],$row['description'],$row['annee'],$row['email']);
+	  	}
+	  	return $entreprise;
+	}
+
+
+	function createCandidat($candidat){		
+		$this->connexion->exec("INSERT INTO `candidat`(  `email` , `age`,`p_act`,`prenom`,`adresse`,`telephone`,`nom`) VALUES ('".$candidat->getMail()."','".$candidat->getAge()."','".$candidat->getP_act()."','".$candidat->getPrenom()."','".$candidat->getAdresse()."','".$candidat->getTelephone()."','".$candidat->getNom()."')");
+	}
+
+	function getCandidatByEmail($email){
+
+		$sql =  "SELECT * FROM `candidat` WHERE email='".$email."'";
+		$candidat = null;
+		include_once "Model/candidat.php";
+	    foreach  ($this->connexion->query($sql) as $row) {
+	    	$candidat = new Candidat($row['nom'],$row['adresse'],$row['prenom'],$row['telephone'],$row['age'],$row['p_act'],$row['email']);
+	  	}
+	  	return $candidat;
+	}
+
+	function createEntreprise($entreprise){		
+		$this->connexion->exec("INSERT INTO `entreprise`(  `email` , `nom`,`annee`,`description`,`adresse`) VALUES ('".$entreprise->getMail()."','".$entreprise->getNom()."','".$entreprise->getAnnee()."','".$entreprise->getDescription()."','".$entreprise->getAdresse()."')");
+	}
 
 
 	function createOffre($offre){

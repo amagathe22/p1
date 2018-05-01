@@ -31,10 +31,11 @@ if ($page) {
 			break;
 		case "offre":
 			checkLoggedIn();
-			showPage("Controler/offre.php");
+			/*showPage("Controler/offre.php");*/
+			showPage("Vue/vue_offre.php");
 			break;
 		case "inscription":
-			showPage("Vue/inscription.html");
+			showPage("Vue/inscription_.html");
 			break;
 		default:
 			checkLoggedIn();			
@@ -43,8 +44,11 @@ if ($page) {
 	}
 }else if ($action) {
 	switch ($action) {
-		case 'inscription':
-			include_once "Controler/inscription.php";
+		case 'inscription_entreprise':
+			include_once "Controler/inscription_entreprise.php";
+			break;
+		case 'inscription_candidat':
+			include_once "Controler/inscription_candidat.php";
 			break;
 		case 'login':
 			include_once "Controler/login.php";

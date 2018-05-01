@@ -3,7 +3,7 @@ echo (count ($offre_dispo));
 $n = count($offre_dispo);
 
 
-for ($i=1; $i <=$n ; $i++) { 
+for ($i=0; $i <=$n ; $i++) { 
     
     echo $offre_dispo[$i]->GetEntreprise();
     

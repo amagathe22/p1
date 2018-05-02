@@ -4,7 +4,9 @@
 	<title>Error</title>
 </head>
 <body>
-<h1>Loggin failed</h1>
+	<br><br><br><br><br><br><br>
+<h1>Connexion impossible: Verifier vos identifiants</h1>
+    <br><br><br><br><br><br>
 <a href="index.php?">Retourner à la page de connexion</a>
 </body>
 </html>

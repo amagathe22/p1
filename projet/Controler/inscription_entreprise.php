@@ -22,8 +22,10 @@ if ($user==null){
     $model->createUser($createdUser);
     $createdEntreprise = new Entreprise($nom,$adresse,$description,$annee,$mail);
     $model->createEntreprise($createdEntreprise);
-	include_once "Vue/created.php";
+    /*include_once "Vue/created.php";*/
+    header("location: index.php?page=created");
 }else {
-	include_once "Vue/existing.php";
+    /*include_once "Vue/existing.php";*/
+    header("location: index.php?page=existing");
 }
 ?>

@@ -12,9 +12,10 @@ include_once "Model/model.php";
 include_once "Model/entreprise.php";
 
 $user = unserialize($_SESSION["user"]);
-echo $user->getMail();
+
 $model = new Model();
 $entreprise = $model->getEntrepriseByEmail($user->getMail());
+$_SESSION["entreprise"]=serialize($entreprise);
 
 
 
@@ -30,9 +31,11 @@ $entreprise = $model->getEntrepriseByEmail($user->getMail());
         <form action="index.php?action=logout" method="post">
                 <input type="submit" value="deconnexion">
         </form>
+        <br> <br>
         <form action="index.php?page=poster_offre" method="post">        
                 <input type="submit" value="poster offre">
         </form>
+        <br><br>
         <form action="index.php?page=accès_candidature" method="post">        
                 <input type="submit" value="accéder aux candidatures">
         </form>

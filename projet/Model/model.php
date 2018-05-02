@@ -19,7 +19,7 @@ class Model
 		    // set the PDO error mode to exception
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $this->connexion=$conn;
-		    echo "Connected successfully"; 
+		    /*echo "Connected successfully"; */
 	    }
 		catch(PDOException $e)
 	    {
@@ -75,7 +75,7 @@ class Model
 
 
 	function createOffre($offre){
-		$this->connexion->exec("INSERT INTO `offre`( `entreprise`, `description`,`parution`,`lieutravail`,`début`) VALUES ('".$offre->getEntreprise()."',   '".$offre->getDescription()."',   '".$offre->getDate_de_parution()."',   '".$offre->getLieu_de_travail()."',   '".$offre->getDate_de_debut()."')");
+		$this->connexion->exec("INSERT INTO `offre`( `entreprise`, `description`,`parution`,`adresse`) VALUES ('".$offre->getEntreprise()."',   '".$offre->getDescription()."',   '".$offre->getParution()."',   '".$offre->getAdresse()."')");
 	}
 
 	function getListOffre() {
@@ -85,7 +85,7 @@ class Model
 		/*echo $sql; */		
 		include_once "Model/offre.php";				
 		foreach  ($this->connexion->query($sql) as $row) {			
-			$offre = new Offre($row['debut'],$row['description'],$row['entreprise'],$row['parution'],$row['lieutravail']);
+			$offre = new Offre($row['parution'],$row['description'],$row['entreprise'],$row['adresse']);
 			array_push($list,$offre);
 		}
 		return $list;

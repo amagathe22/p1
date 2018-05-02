@@ -93,25 +93,32 @@ hr {
 }
 </style>
 <body>
+<br><br><br><br><br><br><br><br>
+<h1>Publier une offre</h1>
 
-<h1>Page d'inscription</h1>
+<?php
+session_start();
+include_once "Model/entreprise.php";
+$entreprise = unserialize($_SESSION["entreprise"]);
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Insérer une offre dans la base de données</button>
+
+?>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Publier une offre</button>
 
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" action="index.php?action=add_offre" method="post">
     <div class="container">
-      <h1>Page d'inscription d'une offre dans la base de données</h1>
+      <h1>Publication d'une offre</h1>
       <hr>
-      <label for="poste"><b>Poste</b></label>
-      <input type="text" placeholder="Enter poste" poste="poste" required>
+            
+      <TEXTAREA name="description" rows=10 COLS=100 required>Decriver le poste</TEXTAREA> <P>
 
       <label for="Entreprise"><b>Entreprise</b></label>
-      <input type="text" placeholder="Entreprise" name="Entreprise" required>
+      <input type="text" value=<?php echo $entreprise->getNom() ?> name="entreprise" required>
 
       <label for="Localisation"><b>Localisation</b></label>
-      <input type="text" placeholder="Localisation" name="localisation" required>
+      <input type="text" value=<?php echo ($entreprise->getAdresse()) ?> name="adresse" required>      
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>

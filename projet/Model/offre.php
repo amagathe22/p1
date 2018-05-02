@@ -3,60 +3,56 @@
 
 class Offre
 {
-    private $date_de_parution;
+    
     private $description;
-    private $date_de_debut;
+    private $parution;
     private $entreprise;
-    private $lieu_de_travail;
+    private $adresse;
 
-    function __construct($date_de_debut,$description,$entreprise,$date_de_parution,$lieu_de_travail)
+    function __construct($parution,$description,$entreprise,$adresse)
     {
         
-       $this->date_de_parution = $date_de_parution;
+      
        $this->description = $description;
-       $this->date_de_debut = $date_de_debut;
+       $this->parution = $parution;
        $this->entreprise = $entreprise;
-       $this->lieu_de_travail = $lieu_de_travail;
+       $this->adresse = $adresse;
     }
 
-    function getDate_de_parution(){
-		return $this->date_de_parution;
+    function getParution(){
+		return $this->parution;
     }
 
     function getDescription(){
 		return $this->description;
     }
 
-    function getLieu_de_travail(){
-		return $this->lieu_de_travail;
+    function getAdresse(){
+		return $this->adresse;
     }
 
     function getEntreprise(){
 		return $this->entreprise;
     }
 
-    function getDate_de_debut(){
-		return $this->date_de_debut;
-    }
+   
 
-    function setDate_de_parution($date_de_parution){
-		$this->date_de_parution = $date_de_parution;
+    function setParution($parution){
+		$this->parution = $parution;
     }
     
     function setDescription($description){
 		$this->description = $description;
     }
     
-    function setDate_de_debut($date_de_debut){
-		$this->date_de_debut = $date_de_debut;
-    }
+    
     
     function setEntreprise($entreprise){
 		$this->entreprise = $entreprise;
     }
     
-    function setLieu_de_travail($lieu_de_travail){
-		$this->lieu_de_travail = $lieu_de_travail;
+    function setAdresse($adresse){
+		$this->adresse = $adresse;
 	}
 
 }

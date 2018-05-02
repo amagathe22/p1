@@ -3,12 +3,17 @@
 <head>
 	<title>Offre created</title>
 </head>
+<?php session_start(); ?>
 <body>
-<p>entreprise: <?php echo $createdOffre->getEntreprise() ?></p>
-<p>date de parution : <?php echo $createdOffre->getDate_de_parution() ?></p>
-<p>lieu de travail : <?php echo $createdOffre->getLieu_de_travail() ?></p>
-<p>date de début : <?php echo $createdOffre->getDate_de_debut() ?></p>
-<p>description : <?php echo $createdOffre->get_Description() ?></p>
+<br><br><br><br><br><br><br><br>
+<h1>L'offre est publiée</h1>
+<form action="index.php?action=logout" method="post">
+    <input type="submit" value="deconnexion">
+</form>
+<br><br>
+<form action="index.php?page=accueil_entreprise" method="post">
+    <input type="submit" value="retour">
+</form>
 </body>
 </html>
 

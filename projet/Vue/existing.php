@@ -4,6 +4,7 @@
 	<title>User existing</title>
 </head>
 <body>
-<p>Désolé, l'utilisateur existe déjà !</p>
+<br><br><br><br><br><br><br><br><br><br><br>
+<h1>Désolé, l'utilisateur existe déjà !</h1>
 </body>
 </html>

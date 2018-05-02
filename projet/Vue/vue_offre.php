@@ -58,6 +58,7 @@ body {
 </div>
 
 <div class="topnav">
+  <a href="index.php?page=accueil_candidat">Accueil</a>
   <a href="index.php?action=logout">Se déconnecter</a>
   <a href="javascript:window.location.href=window.location.href">Rafraichir la liste d'offres</a>
   
@@ -91,17 +92,36 @@ body {
 </body>
 <body>
 
-<table id="customers">
+<?php 
+include_once "Model/model.php";
+$model = new Model();
+$list = $model->getListOffre();
+/*echo (count ($list));*/
+
+
+
+
+
+?>
+
+<table id="customers"> 
   <tr>
     <th>Poste</th>
     <th>Entreprise</th>
     <th>Région, Pays</th>
+    <th>Parution</th>
   </tr>
-  <tr>
-    <td><a href="http://localhost/p1/projet/Vue/pagerecrutement.php" style="color:#190707;">Ingénieur développement Web JAVA</td>
-    <td>Sopra Steria</td>
-    <td>Paris, France</td>
+  <?php foreach ($list as $key => $value) { ?>
+  <tr>  
+    <td><?php echo $value->getDescription(); ?></td>
+    <td><?php echo $value->getEntreprise(); ?> </td>
+    <td><?php echo $value->getAdresse(); ?></td>
+    <td><?php echo $value->getParution(); ?></td>
   </tr>
+  <?php
+  }
+  ?>
+  
 </table>
 
 </body>
@@ -109,21 +129,6 @@ body {
 
 
 
-<?php 
-echo (count ($offre_dispo));
-$n = count($offre_dispo);
-
-
-for ($i=0; $i <=$n ; $i++) { 
-    
-    echo $offre_dispo[$i]->GetEntreprise();
-    
-    echo $offre_dispo[$i]->GetDescription();
-    //echo $offre_dispo[$i]->GetDate_de_debut();
-    echo $offre_dispo[$i]->GetLieu_de_travail();
-    
-}
-?>
 
 
 

@@ -24,8 +24,8 @@ if ($user==null){
     $model->createUser($createdUser);
     $createdCandidat = new Candidat($nom,$adresse,$prenom,$telephone,$age,$p_act,$mail);
     $model->createCandidat($createdCandidat);
-	include_once "Vue/created.php";
+	header("location: index.php?page=created");
 }else {
-	include_once "Vue/existing.php";
+	header("location: index.php?page=existing");
 }
 ?>

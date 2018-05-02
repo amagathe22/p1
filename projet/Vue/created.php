@@ -4,14 +4,11 @@
 	<title>User created</title>
 </head>
 <body>
-<p>L'utilisateur a ete cre  Mail: <?php echo $createdUser->getMail() ?></p>
-<form></form
-<?php
-
-header("Location: index.php?page=login");
-
-
-
-
-
-?>
+	<br><br><br><br><br><br><br>
+<h1>Vous etes inscrits sur LinkedON !</h1>
+<br><br><br><br>
+<form action="index.php?page=login" method="post">
+    <input type="submit" value="deconnexion">
+</form>
+</body>
+</html>

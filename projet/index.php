@@ -37,9 +37,24 @@ if ($page) {
 		case "inscription":
 			showPage("Vue/inscription_.html");
 			break;
+		case "poster_offre":
+			showPage("Vue/poster_offre.php");
+			break;
+		case "created_offre":
+			showPage("Vue/created_offre.php");
+			break;
+		case "erreur_login":
+			showPage("Vue/erreur_login.php");
+			break;
+		case "created":
+			showPage("Vue/created.php");
+			break;
+		case "existing":
+			showPage("Vue/existing.php");
+			break;
 		default:
 			checkLoggedIn();			
-			showPage("Vue/home.php");
+			showPage("Vue/login.html");
 			break;
 	}
 }else if ($action) {
@@ -58,6 +73,9 @@ if ($page) {
 			break;
 		case 'offre':
 			include_once "Controler/offre.php";
+			break;
+		case 'add_offre':
+			include_once "Controler/add_offre.php";
 			break;
 		default:
 			include "Vue/home.php";

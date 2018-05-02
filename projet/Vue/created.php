@@ -4,7 +4,14 @@
 	<title>User created</title>
 </head>
 <body>
-<p>Mail: <?php echo $createdUser->getMail() ?></p>
+<p>L'utilisateur a ete cre  Mail: <?php echo $createdUser->getMail() ?></p>
+<form></form
+<?php
 
-</body>
-</html>
+header("Location: index.php?page=login");
+
+
+
+
+
+?>

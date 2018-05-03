@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 03, 2018 at 07:37 AM
--- Server version: 5.6.34-log
--- PHP Version: 7.1.7
+-- Hôte : localhost:3306
+-- Généré le :  jeu. 03 mai 2018 à 12:53
+-- Version du serveur :  5.6.38
+-- Version de PHP :  7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `linkedon`
+-- Base de données :  `linkedon`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `candidat`
+-- Structure de la table `candidat`
 --
 
 CREATE TABLE `candidat` (
@@ -40,17 +38,16 @@ CREATE TABLE `candidat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `candidat`
+-- Déchargement des données de la table `candidat`
 --
 
 INSERT INTO `candidat` (`id`, `age`, `p_act`, `nom`, `prenom`, `adresse`, `telephone`, `email`) VALUES
-(11, '19', 'etudiant', 'Petrit', 'Sacha', '9 rue de Luneville 75019 Paris', '0658139724', 'sacha@isep.fr'),
-(12, '19', 'etudiant', 'Petrit', 'Sacha', '6 rue therese', '0950339163', 'sacha.petrit@gmail.com');
+(1, '20', 'Etudiant a l ISEP', 'Adam', 'Cyrille', 'Rue notre Dame des Champs 75006 Paris', '0642010357', 'adam.cyrille@hotmail.fr');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `entreprise`
+-- Structure de la table `entreprise`
 --
 
 CREATE TABLE `entreprise` (
@@ -63,16 +60,16 @@ CREATE TABLE `entreprise` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `entreprise`
+-- Déchargement des données de la table `entreprise`
 --
 
 INSERT INTO `entreprise` (`id`, `nom`, `adresse`, `description`, `annee`, `email`) VALUES
-(6, 'Mitsubishi Motors', 'Tokyo', 'Motors technologies', '1937', 'Mitsubishi@com');
+(7, 'Sopra Steria', 'Rue de Presbourg 75016 Paris', 'Grande firme de la transformation du numerique', '1997', 'cyrillou97@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `offre`
+-- Structure de la table `offre`
 --
 
 CREATE TABLE `offre` (
@@ -84,18 +81,19 @@ CREATE TABLE `offre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `offre`
+-- Déchargement des données de la table `offre`
 --
 
 INSERT INTO `offre` (`parution`, `description`, `entreprise`, `adresse`, `id`) VALUES
-('0000-00-00', 'Mitsubishi recherche un alternant vÃ©rification technique avant vente nÃ©cessaire bon relationnel', 'Mitsubishi', 'Tokyo', 11),
-('0000-00-00', 'Ingenieur developpement moteur', 'Mitsubishi', 'Tokyo', 12),
-('Mitsubishi@com', 'Decriver le poste', 'Mitsubishi', 'Tokyo', 13);
+('contact@soprasteria.com', 'Ingenieur developpement JAVA J2EE - Alternance (Ref 0230)', 'Sopra Steria', 'Paris - FRANCE', 14),
+('contact@soprasteria.com', 'Chef de Projet - CDI (Ref 0231)', 'Sopra Steria', 'Paris - FRANCE', 15),
+('contact@soprasteria.com', 'Project Management Officer - Stage (Ref 0232)', 'Sopra Steria', 'Paris - FRANCE', 16),
+('contact@thales.com', 'PMO', 'Thales', 'Massy - FRANCE', 17);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
 CREATE TABLE `user` (
@@ -106,66 +104,68 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`email`, `mdp`, `id`, `type`) VALUES
-('sacha@isep.fr', '$2y$10$rBdbyBvtnTjiB8u.55drbukBfz1hH6kiwX3qVB0aUfHMmDLDHmc.K', 24, 'candidat'),
-('Mitsubishi@com', '$2y$10$6hk4q.G2URc9lMbuYZpJZOLOTm/z6OX6nJTV4LA7agzzq.wypt7GG', 25, 'entreprise'),
-('sacha.petrit@gmail.com', '$2y$10$tewCjeD/paobUdIayPCi/.egpospa4nt22o9ZHqgPDFezWbXmf4XO', 26, 'candidat');
+('adam.cyrille@hotmail.fr', '$2y$10$Mr/0zhQdMEIPz1JHukqUI.ot/6uqASq8LEwkE2qHxVxPIzJvGBmpi', 27, 'candidat'),
+('cyrillou97@gmail.com', '$2y$10$uMkllc4PXOYKi.hY17RAzO7vbibWthiWGP6frUKF5bkeRzQ7jq/vC', 28, 'entreprise');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `candidat`
+-- Index pour la table `candidat`
 --
 ALTER TABLE `candidat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `entreprise`
+-- Index pour la table `entreprise`
 --
 ALTER TABLE `entreprise`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `offre`
+-- Index pour la table `offre`
 --
 ALTER TABLE `offre`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Index pour la table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `candidat`
+-- AUTO_INCREMENT pour la table `candidat`
 --
 ALTER TABLE `candidat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `entreprise`
---
-ALTER TABLE `entreprise`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `offre`
---
-ALTER TABLE `offre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT pour la table `entreprise`
+--
+ALTER TABLE `entreprise`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `offre`
+--
+ALTER TABLE `offre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;COMMIT;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

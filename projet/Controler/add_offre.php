@@ -1,8 +1,9 @@
 <?php
 $adresse = $_POST['adresse'];
 $description = $_POST['description'];
-$parution = date('l \t\h\e jS');
+$parution = $_POST['email'];
 $entreprise = $_POST["entreprise"];
+
 
 
 include_once "Model/model.php";

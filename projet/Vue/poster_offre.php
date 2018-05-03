@@ -118,7 +118,10 @@ $entreprise = unserialize($_SESSION["entreprise"]);
       <input type="text" value=<?php echo $entreprise->getNom() ?> name="entreprise" required>
 
       <label for="Localisation"><b>Localisation</b></label>
-      <input type="text" value=<?php echo ($entreprise->getAdresse()) ?> name="adresse" required>      
+      <input type="text" value=<?php echo ($entreprise->getAdresse()) ?> name="adresse" required>
+
+      <label for="email"><b>email</b></label>
+      <input type="text" value=<?php echo ($entreprise->getMail()) ?> name="email" required>      
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>

@@ -109,7 +109,7 @@ $list = $model->getListOffre();
     <th>Poste</th>
     <th>Entreprise</th>
     <th>Région, Pays</th>
-    <th>Parution</th>
+    <th>Courriel</th>
   </tr>
   <?php foreach ($list as $key => $value) { ?>
   <tr>  

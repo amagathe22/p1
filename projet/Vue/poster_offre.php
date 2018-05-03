@@ -129,7 +129,9 @@ $entreprise = unserialize($_SESSION["entreprise"]);
 </div>
 
 <br><br>
-
+<form action="index.php?page=accueil_entreprise" method="post">
+    <input type="submit" value="Accueil">
+</form>
 
 <script>
 var modal = document.getElementById('id01');

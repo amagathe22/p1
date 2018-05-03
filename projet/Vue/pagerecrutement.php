@@ -127,7 +127,7 @@ body {
 </div>
 
 <div class="footer">
-    <p align=center><input type=submit></p>
+    <a onclick="return confirm('Votre candidature a bien été prise en compte');"><p align=center><input type=submit></p>
 </div>
   
 </body>

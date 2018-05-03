@@ -112,7 +112,7 @@ $entreprise = unserialize($_SESSION["entreprise"]);
       <h1>Publication d'une offre</h1>
       <hr>
             
-      <TEXTAREA name="description" rows=10 COLS=100 required>Decriver le poste</TEXTAREA> <P>
+      <TEXTAREA name="description" rows=10 COLS=100 required>Description du poste</TEXTAREA> <P>
 
       <label for="Entreprise"><b>Entreprise</b></label>
       <input type="text" value=<?php echo $entreprise->getNom() ?> name="entreprise" required>

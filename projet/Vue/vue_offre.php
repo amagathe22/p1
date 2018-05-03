@@ -113,7 +113,7 @@ $list = $model->getListOffre();
   </tr>
   <?php foreach ($list as $key => $value) { ?>
   <tr>  
-    <td><?php echo $value->getDescription(); ?></td>
+    <td><a href="index.php?page=postuler"><?php echo $value->getDescription(); ?></a></td>
     <td><?php echo $value->getEntreprise(); ?> </td>
     <td><?php echo $value->getAdresse(); ?></td>
     <td><?php echo $value->getParution(); ?></td>

@@ -88,7 +88,7 @@ body {
 
 <div class="topnav">
   <a href="index.php?action=logout">Se déconnecter</a>
-  <a href="javascript:history.back()">Revenir à la sélection d'offres</a>
+  <a href="index.php?page=offre">Revenir à la sélection d'offres</a>
   
 </div>
 

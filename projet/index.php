@@ -52,6 +52,9 @@ if ($page) {
 		case "existing":
 			showPage("Vue/existing.php");
 			break;
+		case "postuler":
+			showPage("Vue/pagerecrutement.php");
+			break;
 		default:
 			checkLoggedIn();			
 			showPage("Vue/login.html");

@@ -29,14 +29,11 @@ $_SESSION["entreprise"]=serialize($entreprise);
         <h2 style="color:darkblue; font-family:calibri">DESCRIPTION: <?php echo ($entreprise->getDescription()) ?> </h2>
         <h2 style="color:darkblue; font-family:calibri">ANNÉE: <?php echo ($entreprise->getAnnee()) ?> </h2>
         <form action="index.php?action=logout" method="post">
-                <input type="submit" value="deconnexion">
+                <input type="submit" value="déconnexion">
         </form>
         <br> <br>
         <form action="index.php?page=poster_offre" method="post">        
-                <input type="submit" value="poster offre">
+                <input type="submit" value="poster une offre">
         </form>
-        <br><br>
-        <form action="index.php?page=accès_candidature" method="post">        
-                <input type="submit" value="accéder aux candidatures">
-        </form>
+
 </div>

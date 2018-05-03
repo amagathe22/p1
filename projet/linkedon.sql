@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 02, 2018 at 10:27 PM
+-- Generation Time: May 03, 2018 at 07:37 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.7
 
@@ -44,7 +44,8 @@ CREATE TABLE `candidat` (
 --
 
 INSERT INTO `candidat` (`id`, `age`, `p_act`, `nom`, `prenom`, `adresse`, `telephone`, `email`) VALUES
-(11, '19', 'etudiant', 'Petrit', 'Sacha', '9 rue de Luneville 75019 Paris', '0658139724', 'sacha@isep.fr');
+(11, '19', 'etudiant', 'Petrit', 'Sacha', '9 rue de Luneville 75019 Paris', '0658139724', 'sacha@isep.fr'),
+(12, '19', 'etudiant', 'Petrit', 'Sacha', '6 rue therese', '0950339163', 'sacha.petrit@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ INSERT INTO `entreprise` (`id`, `nom`, `adresse`, `description`, `annee`, `email
 --
 
 CREATE TABLE `offre` (
-  `parution` date NOT NULL,
+  `parution` varchar(65) NOT NULL,
   `description` text NOT NULL,
   `entreprise` varchar(65) NOT NULL,
   `adresse` varchar(65) NOT NULL,
@@ -87,7 +88,9 @@ CREATE TABLE `offre` (
 --
 
 INSERT INTO `offre` (`parution`, `description`, `entreprise`, `adresse`, `id`) VALUES
-('0000-00-00', 'Mitsubishi recherche un alternant vÃ©rification technique avant vente nÃ©cessaire bon relationnel', 'Mitsubishi', 'Tokyo', 11);
+('0000-00-00', 'Mitsubishi recherche un alternant vÃ©rification technique avant vente nÃ©cessaire bon relationnel', 'Mitsubishi', 'Tokyo', 11),
+('0000-00-00', 'Ingenieur developpement moteur', 'Mitsubishi', 'Tokyo', 12),
+('Mitsubishi@com', 'Decriver le poste', 'Mitsubishi', 'Tokyo', 13);
 
 -- --------------------------------------------------------
 
@@ -108,7 +111,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`email`, `mdp`, `id`, `type`) VALUES
 ('sacha@isep.fr', '$2y$10$rBdbyBvtnTjiB8u.55drbukBfz1hH6kiwX3qVB0aUfHMmDLDHmc.K', 24, 'candidat'),
-('Mitsubishi@com', '$2y$10$6hk4q.G2URc9lMbuYZpJZOLOTm/z6OX6nJTV4LA7agzzq.wypt7GG', 25, 'entreprise');
+('Mitsubishi@com', '$2y$10$6hk4q.G2URc9lMbuYZpJZOLOTm/z6OX6nJTV4LA7agzzq.wypt7GG', 25, 'entreprise'),
+('sacha.petrit@gmail.com', '$2y$10$tewCjeD/paobUdIayPCi/.egpospa4nt22o9ZHqgPDFezWbXmf4XO', 26, 'candidat');
 
 --
 -- Indexes for dumped tables
@@ -146,7 +150,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `candidat`
 --
 ALTER TABLE `candidat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `entreprise`
 --
@@ -156,12 +160,12 @@ ALTER TABLE `entreprise`
 -- AUTO_INCREMENT for table `offre`
 --
 ALTER TABLE `offre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;COMMIT;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
